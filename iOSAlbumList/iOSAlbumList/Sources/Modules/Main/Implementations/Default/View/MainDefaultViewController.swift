@@ -31,7 +31,8 @@ class MainDefaultViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        // Adding title of navbar
+        self.navigationItem.title = "Albums"
     }
     
     func subscribeToObserver (_ subject: PublishSubject<[AlbumItem]>) {
