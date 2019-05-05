@@ -20,6 +20,9 @@
 		03F85E8B227F6469007EB30D /* MainRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F85E7D227F6469007EB30D /* MainRouterProtocol.swift */; };
 		03F85E8C227F6469007EB30D /* MainPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F85E7E227F6469007EB30D /* MainPresenterProtocol.swift */; };
 		03F85E8E227F6685007EB30D /* AlbumItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F85E8D227F6685007EB30D /* AlbumItem.swift */; };
+		03F85E93227F7B5A007EB30D /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F85E90227F7B5A007EB30D /* HttpResponse.swift */; };
+		03F85E94227F7B5A007EB30D /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F85E91227F7B5A007EB30D /* HttpClient.swift */; };
+		03F85E95227F7B5A007EB30D /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F85E92227F7B5A007EB30D /* HttpError.swift */; };
 		8C33DF6B7C10ED9D37DCC938 /* Pods_iOSAlbumList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4777A1B504D2AABA23A78F3F /* Pods_iOSAlbumList.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,9 @@
 		03F85E7D227F6469007EB30D /* MainRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouterProtocol.swift; sourceTree = "<group>"; };
 		03F85E7E227F6469007EB30D /* MainPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenterProtocol.swift; sourceTree = "<group>"; };
 		03F85E8D227F6685007EB30D /* AlbumItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumItem.swift; sourceTree = "<group>"; };
+		03F85E90227F7B5A007EB30D /* HttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		03F85E91227F7B5A007EB30D /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		03F85E92227F7B5A007EB30D /* HttpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		3FAA655DE362DC6337511742 /* Pods-iOSAlbumList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAlbumList.release.xcconfig"; path = "Target Support Files/Pods-iOSAlbumList/Pods-iOSAlbumList.release.xcconfig"; sourceTree = "<group>"; };
 		4777A1B504D2AABA23A78F3F /* Pods_iOSAlbumList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSAlbumList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE70601C74595C971C0AA81 /* Pods-iOSAlbumList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSAlbumList.debug.xcconfig"; path = "Target Support Files/Pods-iOSAlbumList/Pods-iOSAlbumList.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 		03F85E6B227F6469007EB30D /* Default */ = {
 			isa = PBXGroup;
 			children = (
+				03F85E8F227F7B5A007EB30D /* Network Layer */,
 				03F85E6D227F6469007EB30D /* Resources */,
 				03F85E74227F6469007EB30D /* View */,
 				03F85E6C227F6469007EB30D /* MainDefaultRouter.swift */,
@@ -173,6 +180,16 @@
 				03F85E7D227F6469007EB30D /* MainRouterProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		03F85E8F227F7B5A007EB30D /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				03F85E90227F7B5A007EB30D /* HttpResponse.swift */,
+				03F85E91227F7B5A007EB30D /* HttpClient.swift */,
+				03F85E92227F7B5A007EB30D /* HttpError.swift */,
+			);
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 		81ADBC0B72F598DA3CEE5159 /* Pods */ = {
@@ -319,12 +336,15 @@
 				03F85E8B227F6469007EB30D /* MainRouterProtocol.swift in Sources */,
 				03F85E8C227F6469007EB30D /* MainPresenterProtocol.swift in Sources */,
 				03F85E87227F6469007EB30D /* MainDefaultPresenter.swift in Sources */,
+				03F85E95227F7B5A007EB30D /* HttpError.swift in Sources */,
 				03F85E55227F636B007EB30D /* AppDelegate.swift in Sources */,
 				03F85E81227F6469007EB30D /* MainDefaultInteractor.swift in Sources */,
 				03F85E85227F6469007EB30D /* MainDefaultViewController.swift in Sources */,
 				03F85E8E227F6685007EB30D /* AlbumItem.swift in Sources */,
 				03F85E8A227F6469007EB30D /* MainInteractorProtocol.swift in Sources */,
+				03F85E93227F7B5A007EB30D /* HttpResponse.swift in Sources */,
 				03F85E7F227F6469007EB30D /* MainDefaultRouter.swift in Sources */,
+				03F85E94227F7B5A007EB30D /* HttpClient.swift in Sources */,
 				03F85E89227F6469007EB30D /* MainViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
