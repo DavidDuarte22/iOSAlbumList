@@ -28,6 +28,17 @@ extension AlbumDetailDefaultPresenter: AlbumDetailPresenterProtocol {
     }
     
     func showPhotos() {
+        // asking for photos and subscribing to subject waiting for the update
+        interactor?.fetchPhotos()
+        let subscription = self.interactor?.interactorToPresenterSubject?.subscribe(
+            onNext: {(photos) in
+                // when the interactor fetch the photos, notify the view the changes
+                self.presenterToViewSubject?.onNext(photos)
+        },
+            onError: {(error) in 
+                self.presenterToViewSubject?.onError(error)
+        })
+        subscription?.disposed(by: disposeBag)
     }
     
     func showPhotoDetail(_ view: AlbumDetailViewProtocol, _ photo: PhotoItem, _ photoFetched: UIImage) {

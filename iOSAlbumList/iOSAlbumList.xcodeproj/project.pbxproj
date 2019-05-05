@@ -236,8 +236,8 @@
 		03F85E9C227F8841007EB30D /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				03F85E9D227F8841007EB30D /* AlbumDetailDefaultRouter.swift */,
 				03F85E9E227F8841007EB30D /* Resources */,
+				03F85E9D227F8841007EB30D /* AlbumDetailDefaultRouter.swift */,
 				03F85EA0227F8841007EB30D /* AlbumDetailDefaultInteractor.swift */,
 				03F85EA1227F8841007EB30D /* AlbumDetailDefaultPresenter.swift */,
 				03F85EA2227F8841007EB30D /* View */,
