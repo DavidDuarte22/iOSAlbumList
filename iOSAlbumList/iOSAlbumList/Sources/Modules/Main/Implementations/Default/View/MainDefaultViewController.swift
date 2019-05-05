@@ -14,8 +14,13 @@ class MainDefaultViewController: UIViewController {
     var presenter: MainPresenterProtocol?
     let disposeBag = DisposeBag()
     
+    var albums: [AlbumItem] = []
+    
     override func viewDidLoad() {
+        // subscribing to presenter observer
         subscribeToObserver((self.presenter?.presenterToViewSubject)!)
+        // fetching albums
+        self.presenter?.showAlbums()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,7 +31,7 @@ class MainDefaultViewController: UIViewController {
     func subscribeToObserver (_ subject: PublishSubject<[AlbumItem]>) {
         subject.subscribe(
             onNext: {(albums) in
-                
+                self.albums = albums
         },
             onError: {(error) in
                 print(error)

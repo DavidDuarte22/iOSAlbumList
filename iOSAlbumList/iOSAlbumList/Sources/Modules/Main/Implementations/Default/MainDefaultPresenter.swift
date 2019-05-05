@@ -16,7 +16,7 @@ class MainDefaultPresenter {
     // Presenter -> View
     var presenterToViewSubject: PublishSubject<[AlbumItem]>?
     let disposeBag = DisposeBag()
-    
+    // init of observer
     init() {
         self.presenterToViewSubject = PublishSubject<[AlbumItem]>()
     }
@@ -25,11 +25,20 @@ class MainDefaultPresenter {
 
 extension MainDefaultPresenter: MainPresenterProtocol {
     func showAlbums() {
-        
+        // asking albums to interactor
+        interactor?.fetchAlbums()
+        let subscription = self.interactor?.interactorToPresenterSubject?.subscribe(
+            onNext: {(albums) in
+                self.presenterToViewSubject?.onNext(albums)
+        },
+            onError: {(error) in
+                self.presenterToViewSubject?.onError(error)
+        })
+        subscription?.disposed(by: disposeBag)
     }
     
     func showAlbumDetail(_ view: MainViewProtocol, _ album: AlbumItem) {
-        
+        // route to album detail module
     }
     
 }
