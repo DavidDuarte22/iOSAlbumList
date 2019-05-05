@@ -32,8 +32,14 @@ extension MainDefaultRouter: MainRouterProtocol {
         return navController
     }
     
-    func presentToDoDetailScreen(from view: MainViewProtocol, for album: AlbumItem) {
+    func presentAlbumDetailScreen(from view: MainViewProtocol, for album: AlbumItem) {
+        let albumDetailVC = AlbumDetailDefaultRouter.createAlbumDetailRouterModule(with: album)
         
+        guard let viewVC = view as? UIViewController else {
+            fatalError("Invalid View Protocol type")
+        }
+        
+        viewVC.navigationController?.pushViewController(albumDetailVC, animated: true)
     }
     
 }

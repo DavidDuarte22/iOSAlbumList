@@ -1,5 +1,5 @@
 //
-//  MainRouter.swift
+//  MainRouterProtocol.swift
 //  iOSAlbumList
 //
 //  Created by David Duarte on 05/05/2019.
@@ -13,5 +13,5 @@ protocol MainRouterProtocol {
     static func instanciateHomeModule() -> UIViewController
         
     // PRESENTER -> ROUTER
-    func presentToDoDetailScreen(from view: MainViewProtocol, for todo: AlbumItem)
+    func presentAlbumDetailScreen(from view: MainViewProtocol, for album: AlbumItem)
 }

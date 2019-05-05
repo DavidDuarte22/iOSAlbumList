@@ -1,5 +1,5 @@
 //
-//  MainInteractor.swift
+//  MainInteractorProtocol.swift
 //  iOSAlbumList
 //
 //  Created by David Duarte on 05/05/2019.
