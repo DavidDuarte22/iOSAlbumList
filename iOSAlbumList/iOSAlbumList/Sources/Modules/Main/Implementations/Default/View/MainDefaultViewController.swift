@@ -38,6 +38,7 @@ class MainDefaultViewController: UIViewController {
         subject.subscribe(
             onNext: {(albums) in
                 self.albums = albums
+                self.albumsCollectionView.reloadData()
         },
             onError: {(error) in
                 print(error)
@@ -53,9 +54,22 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
         return self.albums.count
     }
     
+    // setting layout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        let totalCellWidth = 158 * 2
+        let totalSpacingWidth = 20 * (2 - 1)
+        
+        let leftInset = (albumsCollectionView.contentSize.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+        let rightInset = leftInset
+        
+        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
+    }
+    
     // get cell class 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = albumsCollectionView.dequeueReusableCell(withReuseIdentifier: "albumCard", for: indexPath) as! AlbumCardCollectionViewCell
+        cell.albumTitle.text = albums[indexPath.row].title
         return cell
     }
 }

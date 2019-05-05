@@ -27,19 +27,48 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eYQ-GI-weV">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="156" height="214"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCard" id="htq-D4-bEh" customClass="AlbumCardCollectionViewCell" customModule="iOSAlbumList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="214"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="baD-Gk-rgy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="156" height="155"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="baD-Gk-rgy" secondAttribute="height" multiplier="166:165" id="eP1-hw-VSV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWn-qH-vRf">
+                                                    <rect key="frame" x="0.0" y="160" width="156" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="nsr-Mu-Vag"/>
+                                                        <constraint firstAttribute="width" constant="156" id="xXG-7E-3W2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="baD-Gk-rgy" firstAttribute="leading" secondItem="htq-D4-bEh" secondAttribute="leading" id="AgK-5h-CcN"/>
+                                            <constraint firstItem="PWn-qH-vRf" firstAttribute="top" secondItem="baD-Gk-rgy" secondAttribute="bottom" constant="5" id="ILP-Qn-cej"/>
+                                            <constraint firstItem="PWn-qH-vRf" firstAttribute="leading" secondItem="baD-Gk-rgy" secondAttribute="leading" id="MIl-wo-7tr"/>
+                                            <constraint firstAttribute="trailing" secondItem="baD-Gk-rgy" secondAttribute="trailing" id="hNU-r1-nSk"/>
+                                            <constraint firstItem="baD-Gk-rgy" firstAttribute="top" secondItem="htq-D4-bEh" secondAttribute="top" id="l9c-sy-qj5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="albumTitle" destination="PWn-qH-vRf" id="Sty-bL-pSr"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

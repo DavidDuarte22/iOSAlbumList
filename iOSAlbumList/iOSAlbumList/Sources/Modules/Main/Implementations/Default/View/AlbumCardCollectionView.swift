@@ -10,4 +10,6 @@ import UIKit
 
 class AlbumCardCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var albumTitle: UILabel!
+    
 }
