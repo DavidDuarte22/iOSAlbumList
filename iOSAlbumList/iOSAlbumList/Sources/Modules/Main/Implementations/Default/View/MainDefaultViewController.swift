@@ -23,6 +23,10 @@ class MainDefaultViewController: UIViewController {
         subscribeToObserver((self.presenter?.presenterToViewSubject)!)
         // fetching albums
         self.presenter?.showAlbums()
+        
+        // delegates for collectionview
+        albumsCollectionView.dataSource = self
+        albumsCollectionView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,6 +45,20 @@ class MainDefaultViewController: UIViewController {
     }
 }
 
+// Extension of collection view
+extension MainDefaultViewController: UICollectionViewDelegate,
+UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    // get count of cells
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.albums.count
+    }
+    
+    // get cell class 
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = albumsCollectionView.dequeueReusableCell(withReuseIdentifier: "albumCard", for: indexPath) as! AlbumCardCollectionViewCell
+        return cell
+    }
+}
 
 extension MainDefaultViewController: MainViewProtocol {
     func showAlbums(_ albums: [AlbumItem]) {
