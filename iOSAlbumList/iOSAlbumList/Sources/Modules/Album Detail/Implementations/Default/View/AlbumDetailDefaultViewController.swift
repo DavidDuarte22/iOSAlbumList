@@ -17,6 +17,8 @@ class AlbumDetailDefaultViewController: UIViewController {
     // Dispose bag for RxSwift
     let disposeBag = DisposeBag()
     
+    @IBOutlet weak var photosCollectionView: UICollectionView!
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -31,6 +33,9 @@ class AlbumDetailDefaultViewController: UIViewController {
         backItem.title = " "
         self.navigationItem.backBarButtonItem = backItem
         
+        // collection view delegates
+        photosCollectionView.dataSource = self
+        photosCollectionView.delegate = self
     }
     
     func subscribeToObserver (_ subject: PublishSubject<[PhotoItem]>) {
@@ -38,10 +43,32 @@ class AlbumDetailDefaultViewController: UIViewController {
             onNext: {(photos) in
                 // update photos
                 self.photos = photos
+                self.photosCollectionView.reloadData()
         },
             onError: {(error) in
                 print(error)
         }).disposed(by: disposeBag)
+    }
+}
+
+extension AlbumDetailDefaultViewController: UICollectionViewDelegate,
+UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.photos?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // Make logic in presenter
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCard", for: indexPath) as! PhotoCollectionViewCell
+        
+        return (presenter?.fillCollectionViewCell(collectionView: self.photosCollectionView, cellForItemAt: indexPath, cell: cell, photo: self.photos![indexPath.row]))!
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        let cell = self.photosCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
+        presenter?.showPhotoDetail(self, photos![indexPath.row], cell.photoImage.image!)
     }
 }
 

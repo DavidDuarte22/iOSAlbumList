@@ -40,9 +40,31 @@ extension AlbumDetailDefaultPresenter: AlbumDetailPresenterProtocol {
         })
         subscription?.disposed(by: disposeBag)
     }
+
+    func fillCollectionViewCell(collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, cell: PhotoCollectionViewCell, photo: PhotoItem) -> UICollectionViewCell {
+        
+        
+        let queue = OperationQueue()
+        
+        queue.addOperation {() -> Void in
+            do {
+                let url = URL(string: "\(photo.thumbnailUrl)")!
+                let data = try Data(contentsOf: url)
+                let img = UIImage(data: data)
+                
+                OperationQueue.main.addOperation({ () -> Void in
+                    cell.photoImage.image = img
+                })
+            } catch {
+                cell.photoImage.image = nil
+            }
+        }
+        
+        return cell
+    }
     
     func showPhotoDetail(_ view: AlbumDetailViewProtocol, _ photo: PhotoItem, _ photoFetched: UIImage) {
-
+        // route to photo detail
     }
 
 }

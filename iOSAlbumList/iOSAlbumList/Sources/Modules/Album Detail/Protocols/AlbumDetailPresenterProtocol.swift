@@ -20,4 +20,6 @@ protocol AlbumDetailPresenterProtocol: class {
     // To Interactor
     func showAlbum() -> AlbumItem
     func showPhotos()
+    // Logic of View
+    func fillCollectionViewCell(collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, cell: PhotoCollectionViewCell, photo: PhotoItem) -> UICollectionViewCell
 }
