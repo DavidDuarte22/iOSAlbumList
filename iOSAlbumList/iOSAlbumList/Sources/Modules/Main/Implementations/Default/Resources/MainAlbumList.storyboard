@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iWR-Vh-ZLI">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Default View Controller-->
+        <scene sceneID="ZBn-tt-9j7">
+            <objects>
+                <viewController storyboardIdentifier="MainDefaultView" id="kSm-jo-ToS" customClass="MainDefaultViewController" customModule="iOSAlbumList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KVE-8M-m1P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="David Duarte - davidjulianduarte@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rky-xk-39C">
+                                <rect key="frame" x="16" y="737.33333333333337" width="343" height="40.666666666666629"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rky-xk-39C" firstAttribute="leading" secondItem="KVE-8M-m1P" secondAttribute="leadingMargin" id="4Fa-oL-neW"/>
+                            <constraint firstItem="Rky-xk-39C" firstAttribute="centerX" secondItem="7fc-df-oZm" secondAttribute="centerX" id="Pvd-RG-OFf"/>
+                            <constraint firstItem="Rky-xk-39C" firstAttribute="bottom" secondItem="7fc-df-oZm" secondAttribute="bottom" id="UKz-j0-aQX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7fc-df-oZm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WHA-CQ-LTq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3wp-iC-jaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1973.5999999999999" y="152.21674876847291"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dpn-ay-l5p">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationController" id="iWR-Vh-ZLI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wzK-Nl-kGp">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kSm-jo-ToS" kind="relationship" relationship="rootViewController" id="nek-dL-OfK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHD-1W-PoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="153"/>
+        </scene>
+    </scenes>
+</document>
