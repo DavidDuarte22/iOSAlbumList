@@ -113,8 +113,8 @@
 		03F85E69227F6469007EB30D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				03F85E6A227F6469007EB30D /* Implementations */,
 				03F85E7A227F6469007EB30D /* Protocols */,
+				03F85E6A227F6469007EB30D /* Implementations */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -130,10 +130,10 @@
 		03F85E6B227F6469007EB30D /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				03F85E6C227F6469007EB30D /* MainDefaultRouter.swift */,
 				03F85E6D227F6469007EB30D /* Resources */,
-				03F85E6F227F6469007EB30D /* MainDefaultInteractor.swift */,
 				03F85E74227F6469007EB30D /* View */,
+				03F85E6C227F6469007EB30D /* MainDefaultRouter.swift */,
+				03F85E6F227F6469007EB30D /* MainDefaultInteractor.swift */,
 				03F85E77227F6469007EB30D /* MainDefaultPresenter.swift */,
 				03F85E78227F6469007EB30D /* Entities */,
 			);
@@ -168,9 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				03F85E7B227F6469007EB30D /* MainViewProtocol.swift */,
+				03F85E7E227F6469007EB30D /* MainPresenterProtocol.swift */,
 				03F85E7C227F6469007EB30D /* MainInteractorProtocol.swift */,
 				03F85E7D227F6469007EB30D /* MainRouterProtocol.swift */,
-				03F85E7E227F6469007EB30D /* MainPresenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -181,7 +181,6 @@
 				7BE70601C74595C971C0AA81 /* Pods-iOSAlbumList.debug.xcconfig */,
 				3FAA655DE362DC6337511742 /* Pods-iOSAlbumList.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

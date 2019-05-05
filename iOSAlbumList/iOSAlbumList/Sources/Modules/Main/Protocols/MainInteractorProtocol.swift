@@ -6,9 +6,11 @@
 //  Copyright © 2019 David Duarte. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 protocol MainInteractorProtocol {
-    
+    // Interactor -> Presenter
+    var interactorToPresenterSubject: PublishSubject<[AlbumItem]>? { get }
+    // Load Albums from DB
     func fetchAlbums()
 }

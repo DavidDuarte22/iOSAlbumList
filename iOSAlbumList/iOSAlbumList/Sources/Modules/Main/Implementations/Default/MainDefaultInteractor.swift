@@ -6,7 +6,14 @@
 //  Copyright © 2019 David Duarte. All rights reserved.
 //
 
+import RxSwift
+
 class MainDefaultInteractor {
+    var interactorToPresenterSubject: PublishSubject<[AlbumItem]>?
+    
+    init() {
+        self.interactorToPresenterSubject = PublishSubject<[AlbumItem]>()
+    }
     
 }
 

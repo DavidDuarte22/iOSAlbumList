@@ -6,11 +6,20 @@
 //  Copyright © 2019 David Duarte. All rights reserved.
 //
 
+import RxSwift
+
 class MainDefaultPresenter {
     
     var router: MainRouterProtocol?
     var interactor: MainInteractorProtocol?
     
+    // Presenter -> View
+    var presenterToViewSubject: PublishSubject<[AlbumItem]>?
+    let disposeBag = DisposeBag()
+    
+    init() {
+        self.presenterToViewSubject = PublishSubject<[AlbumItem]>()
+    }
 }
 
 
