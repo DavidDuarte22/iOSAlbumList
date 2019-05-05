@@ -18,9 +18,10 @@ class MainDefaultRouter {
 
 extension MainDefaultRouter: MainRouterProtocol {
     static func instanciateHomeModule() -> UIViewController {
+        // safe instantiate of nav controller and top view controller (Albums list)
         let navController = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
         guard let HomeViewController = navController.topViewController as? MainDefaultViewController else { fatalError("Invalid View Controller") }
-        
+        // instantiate of presenter, interactor, router
         let presenter = MainDefaultPresenter()
         let interactor = MainDefaultInteractor()
         let router = MainDefaultRouter()
@@ -32,7 +33,8 @@ extension MainDefaultRouter: MainRouterProtocol {
         return navController
     }
     
-    func presentAlbumDetailScreen(from view: MainViewProtocol, for album: AlbumItem) {
+    func presentAlbumDetailScreen(from view: MainViewProtocol, with album: AlbumItem) {
+        // instanciate album detail implementation
         let albumDetailVC = AlbumDetailDefaultRouter.createAlbumDetailRouterModule(with: album)
         
         guard let viewVC = view as? UIViewController else {

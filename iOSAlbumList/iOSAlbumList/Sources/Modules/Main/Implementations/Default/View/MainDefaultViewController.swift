@@ -73,6 +73,11 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
         cell.albumTitle.text = albums[indexPath.row].title
         return cell
     }
+    
+    // if a cell is selected, navigate to album detail
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.showAlbumDetail(self, albums[indexPath.row])
+    }
 }
 
 extension MainDefaultViewController: MainViewProtocol {

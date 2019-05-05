@@ -13,5 +13,5 @@ protocol MainRouterProtocol {
     static func instanciateHomeModule() -> UIViewController
         
     // PRESENTER -> ROUTER
-    func presentAlbumDetailScreen(from view: MainViewProtocol, for album: AlbumItem)
+    func presentAlbumDetailScreen(from view: MainViewProtocol, with album: AlbumItem)
 }
