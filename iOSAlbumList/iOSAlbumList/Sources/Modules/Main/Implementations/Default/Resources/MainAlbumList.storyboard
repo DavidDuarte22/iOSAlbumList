@@ -23,16 +23,43 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qEB-sW-l18">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eYQ-GI-weV">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCard" id="htq-D4-bEh">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Rky-xk-39C" firstAttribute="leading" secondItem="KVE-8M-m1P" secondAttribute="leadingMargin" id="4Fa-oL-neW"/>
+                            <constraint firstItem="qEB-sW-l18" firstAttribute="top" secondItem="7fc-df-oZm" secondAttribute="top" id="6wz-g2-w9q"/>
+                            <constraint firstItem="qEB-sW-l18" firstAttribute="centerX" secondItem="Rky-xk-39C" secondAttribute="centerX" id="Lns-8r-5GI"/>
                             <constraint firstItem="Rky-xk-39C" firstAttribute="centerX" secondItem="7fc-df-oZm" secondAttribute="centerX" id="Pvd-RG-OFf"/>
                             <constraint firstItem="Rky-xk-39C" firstAttribute="bottom" secondItem="7fc-df-oZm" secondAttribute="bottom" id="UKz-j0-aQX"/>
+                            <constraint firstItem="qEB-sW-l18" firstAttribute="leading" secondItem="KVE-8M-m1P" secondAttribute="leading" id="nxr-hK-Bh0"/>
+                            <constraint firstItem="Rky-xk-39C" firstAttribute="top" secondItem="qEB-sW-l18" secondAttribute="bottom" constant="8.3333333333333712" id="o7q-AO-9Kb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7fc-df-oZm"/>
                     </view>
                     <navigationItem key="navigationItem" id="WHA-CQ-LTq"/>
+                    <connections>
+                        <outlet property="albumsCollectionView" destination="qEB-sW-l18" id="EOc-u9-UQE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wp-iC-jaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

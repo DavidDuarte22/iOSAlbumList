@@ -14,6 +14,8 @@ class MainDefaultViewController: UIViewController {
     var presenter: MainPresenterProtocol?
     let disposeBag = DisposeBag()
     
+    @IBOutlet weak var albumsCollectionView: UICollectionView!
+    
     var albums: [AlbumItem] = []
     
     override func viewDidLoad() {
