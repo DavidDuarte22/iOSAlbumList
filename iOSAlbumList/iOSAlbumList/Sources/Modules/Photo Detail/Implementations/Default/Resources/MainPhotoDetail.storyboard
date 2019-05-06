@@ -18,9 +18,38 @@
                     <view key="view" contentMode="scaleToFill" id="ZMB-IZ-fZg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rk2-Lc-uI9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="eI6-Kn-dy3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtU-bZ-vXY">
+                                <rect key="frame" x="20" y="478" width="374" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="cat-bJ-bmR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rk2-Lc-uI9" firstAttribute="top" secondItem="hF2-Ny-NV6" secondAttribute="top" id="2gr-Fr-tdc"/>
+                            <constraint firstItem="WtU-bZ-vXY" firstAttribute="leading" secondItem="ZMB-IZ-fZg" secondAttribute="leadingMargin" id="5KR-Zg-WHY"/>
+                            <constraint firstItem="rk2-Lc-uI9" firstAttribute="centerX" secondItem="hF2-Ny-NV6" secondAttribute="centerX" id="RnR-Iv-q22"/>
+                            <constraint firstItem="hF2-Ny-NV6" firstAttribute="bottom" secondItem="rk2-Lc-uI9" secondAttribute="bottom" constant="404" id="Who-Il-ThL"/>
+                            <constraint firstItem="WtU-bZ-vXY" firstAttribute="top" secondItem="rk2-Lc-uI9" secondAttribute="bottom" constant="20" id="bH1-xh-kiG"/>
+                            <constraint firstItem="WtU-bZ-vXY" firstAttribute="centerX" secondItem="rk2-Lc-uI9" secondAttribute="centerX" id="sSk-sC-70t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hF2-Ny-NV6"/>
                     </view>
+                    <connections>
+                        <outlet property="photoImage" destination="rk2-Lc-uI9" id="2ek-KQ-gSS"/>
+                        <outlet property="titleLabel" destination="WtU-bZ-vXY" id="8dC-kh-85G"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="69.565217391304358" y="97.767857142857139"/>

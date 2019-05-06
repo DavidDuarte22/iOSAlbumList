@@ -42,24 +42,24 @@ extension AlbumDetailDefaultPresenter: AlbumDetailPresenterProtocol {
     }
 
     func fillCollectionViewCell(collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, cell: PhotoCollectionViewCell, photo: PhotoItem) -> UICollectionViewCell {
-        
-        
+        // fetch image by url async
         let queue = OperationQueue()
-        
         queue.addOperation {() -> Void in
             do {
+                /* block for fetch photo */
                 let url = URL(string: "\(photo.thumbnailUrl)")!
                 let data = try Data(contentsOf: url)
                 let img = UIImage(data: data)
-                
+                /* */
+                // display in cell when has it image
                 OperationQueue.main.addOperation({ () -> Void in
                     cell.photoImage.image = img
                 })
             } catch {
+                // if error don't display image
                 cell.photoImage.image = nil
             }
         }
-        
         return cell
     }
     
