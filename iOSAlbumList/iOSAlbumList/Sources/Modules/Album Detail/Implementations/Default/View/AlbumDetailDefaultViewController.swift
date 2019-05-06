@@ -82,7 +82,9 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = self.photosCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
-        presenter?.showPhotoDetail(self, photos![indexPath.row], cell.photoImage.image!)
+        if cell.photoImage.image != nil {
+            presenter?.showPhotoDetail(self, photos![indexPath.row], cell.photoImage.image!)
+        }
     }
 }
 
