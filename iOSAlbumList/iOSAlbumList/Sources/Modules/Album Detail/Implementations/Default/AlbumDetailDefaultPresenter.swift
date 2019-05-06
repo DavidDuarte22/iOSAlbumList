@@ -64,7 +64,7 @@ extension AlbumDetailDefaultPresenter: AlbumDetailPresenterProtocol {
     }
     
     func showPhotoDetail(_ view: AlbumDetailViewProtocol, _ photo: PhotoItem, _ photoFetched: UIImage) {
-        // route to photo detail
+        router?.presentPhotoDetailScreen(from: view, for: photo, image: photoFetched)
     }
 
 }

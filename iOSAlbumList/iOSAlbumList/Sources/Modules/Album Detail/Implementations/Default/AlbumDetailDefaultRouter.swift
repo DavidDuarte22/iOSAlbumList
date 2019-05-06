@@ -39,5 +39,15 @@ extension AlbumDetailDefaultRouter: AlbumDetailRouterProtocol {
         
         return albumDetailVC
     }
+    
+    func presentPhotoDetailScreen(from view: AlbumDetailViewProtocol, for photo: PhotoItem, image fetchedPhoto: UIImage) {
+        let photoDetailVC = PhotoDetailDefaultRouter.createPhotoDetailRouterModule(photoItem: photo, withImage: fetchedPhoto)
+        
+        guard let viewVC = view as? UIViewController else {
+            fatalError("Invalid View Protocol type")
+        }
+        
+        viewVC.navigationController?.pushViewController(photoDetailVC, animated: true)
+    }
 }
 
