@@ -10,4 +10,16 @@ import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImage: UIImageView!
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        setNeedsLayout()
+        layoutIfNeeded()
+        
+        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+        
+        var frame = layoutAttributes.frame
+        frame.size.width = ceil(size.width)
+        
+        return layoutAttributes
+    }
 }

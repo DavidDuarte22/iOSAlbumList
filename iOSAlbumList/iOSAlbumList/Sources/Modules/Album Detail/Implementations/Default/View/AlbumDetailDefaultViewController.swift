@@ -39,6 +39,10 @@ class AlbumDetailDefaultViewController: UIViewController {
         // collection view delegates
         photosCollectionView.dataSource = self
         photosCollectionView.delegate = self
+        // setting size of cell adjusting to device
+        (self.photosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize(width: UIScreen.main.bounds.width/3 - 10.0, height: UIScreen.main.bounds.width/3 - 10.0)
+        
+
     }
     
     func subscribeToObserver (_ subject: PublishSubject<[PhotoItem]>) {
@@ -67,6 +71,14 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
         return (presenter?.fillCollectionViewCell(collectionView: self.photosCollectionView, cellForItemAt: indexPath, cell: cell, photo: self.photos![indexPath.row]))!
         
     }
+    // setting layout
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = self.photosCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell

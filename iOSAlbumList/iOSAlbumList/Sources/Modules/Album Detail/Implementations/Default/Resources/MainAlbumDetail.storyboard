@@ -21,10 +21,6 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D3K-rM-f1K">
                                 <rect key="frame" x="10" y="0.0" width="394" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="394" id="ImH-jA-RRD"/>
-                                    <constraint firstAttribute="height" constant="896" id="WdT-ig-sdS"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="0.0" id="2rT-29-qK6">
                                     <size key="itemSize" width="124" height="124"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -39,19 +35,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aEI-Sg-byl">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEI-Sg-byl">
                                                     <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="aEI-Sg-byl" secondAttribute="height" multiplier="31:32" constant="3.875" id="flF-Kw-Oiw"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="aEI-Sg-byl" secondAttribute="trailing" id="1fH-fK-ZlO"/>
-                                            <constraint firstItem="aEI-Sg-byl" firstAttribute="leading" secondItem="L0h-Km-24Q" secondAttribute="leading" id="ilA-dn-CKe"/>
-                                            <constraint firstItem="aEI-Sg-byl" firstAttribute="centerY" secondItem="L0h-Km-24Q" secondAttribute="centerY" id="mjG-lH-9Uw"/>
-                                        </constraints>
+                                        <size key="customSize" width="124" height="124"/>
                                         <connections>
                                             <outlet property="photoImage" destination="aEI-Sg-byl" id="CiG-o5-mKa"/>
                                         </connections>
@@ -61,8 +51,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hos-cJ-Itx" firstAttribute="top" secondItem="D3K-rM-f1K" secondAttribute="top" constant="44" id="P7S-Gd-cLU"/>
                             <constraint firstItem="D3K-rM-f1K" firstAttribute="leading" secondItem="rGJ-Pi-zlz" secondAttribute="leading" constant="10" id="QMq-9O-E9D"/>
                             <constraint firstItem="D3K-rM-f1K" firstAttribute="bottom" secondItem="hos-cJ-Itx" secondAttribute="bottom" constant="34" id="uEs-e9-3Es"/>
+                            <constraint firstItem="hos-cJ-Itx" firstAttribute="trailing" secondItem="D3K-rM-f1K" secondAttribute="trailing" constant="10" id="zAa-rF-nxL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hos-cJ-Itx"/>
                     </view>
