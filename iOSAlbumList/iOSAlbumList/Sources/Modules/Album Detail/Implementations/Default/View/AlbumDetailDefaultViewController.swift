@@ -22,17 +22,20 @@ class AlbumDetailDefaultViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // subscribing to presenter's observer
-        subscribeToObserver((self.presenter?.presenterToViewSubject)!)
-        // fetching album and asking for the photos of the album
-        self.album = presenter?.showAlbum()
-        presenter?.showPhotos()
-        
         self.navigationItem.title = album?.title
         let backItem = UIBarButtonItem()
         backItem.title = " "
         self.navigationItem.backBarButtonItem = backItem
         
+    }
+    
+    override func viewDidLoad() {
+        
+        // subscribing to presenter's observer
+        subscribeToObserver((self.presenter?.presenterToViewSubject)!)
+        // fetching album and asking for the photos of the album
+        self.album = presenter?.showAlbum()
+        presenter?.showPhotos()
         // collection view delegates
         photosCollectionView.dataSource = self
         photosCollectionView.delegate = self
