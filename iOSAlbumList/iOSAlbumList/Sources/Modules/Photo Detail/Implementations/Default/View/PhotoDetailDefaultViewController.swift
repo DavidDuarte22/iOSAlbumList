@@ -22,6 +22,10 @@ class PhotoDetailDefaultViewController: UIViewController {
         self.titleLabel.text = presenter?.showPhotoItem().title
         self.photoImage.image = presenter?.showPhotoImage()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
 }
 
 extension PhotoDetailDefaultViewController: PhotoDetailViewProtocol {
