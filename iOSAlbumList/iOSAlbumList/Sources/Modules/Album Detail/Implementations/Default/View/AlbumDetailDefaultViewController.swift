@@ -13,7 +13,7 @@ class AlbumDetailDefaultViewController: UIViewController {
     
     var presenter: AlbumDetailPresenterProtocol?
     var album: AlbumItem!
-    var photos: [PhotoItem]?
+    var photos: [PhotoItem] = []
     // Dispose bag for RxSwift
     let disposeBag = DisposeBag()
     
@@ -41,7 +41,6 @@ class AlbumDetailDefaultViewController: UIViewController {
         photosCollectionView.delegate = self
         // setting size of cell adjusting to device
         (self.photosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize(width: UIScreen.main.bounds.width/3 - 10.0, height: UIScreen.main.bounds.width/3 - 10.0)
-        
 
     }
     
@@ -61,14 +60,20 @@ class AlbumDetailDefaultViewController: UIViewController {
 extension AlbumDetailDefaultViewController: UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.photos?.count ?? 0
+        
+        if self.photos.count == 0 {
+            photosCollectionView.setEmptyView(title: "We couldn't get any pictures", message: "Try again, please.")
+        } else {
+            self.photosCollectionView.restore()
+        }
+        return self.photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Make logic in presenter
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCard", for: indexPath) as! PhotoCollectionViewCell
         
-        return (presenter?.fillCollectionViewCell(collectionView: self.photosCollectionView, cellForItemAt: indexPath, cell: cell, photo: self.photos![indexPath.row]))!
+        return (presenter?.fillCollectionViewCell(collectionView: self.photosCollectionView, cellForItemAt: indexPath, cell: cell, photo: self.photos[indexPath.row]))!
         
     }
     // setting layout
@@ -83,7 +88,7 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = self.photosCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
         if cell.photoImage.image != nil {
-            presenter?.showPhotoDetail(self, photos![indexPath.row], cell.photoImage.image!)
+            presenter?.showPhotoDetail(self, photos[indexPath.row], cell.photoImage.image!)
         }
     }
 }

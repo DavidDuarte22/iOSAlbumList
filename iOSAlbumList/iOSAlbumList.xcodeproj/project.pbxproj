@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035CBBDA228120DA006E2ACD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035CBBD9228120D9006E2ACD /* Extensions.swift */; };
 		03F85E55227F636B007EB30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F85E54227F636B007EB30D /* AppDelegate.swift */; };
 		03F85E5C227F636D007EB30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F85E5B227F636D007EB30D /* Assets.xcassets */; };
 		03F85E5F227F636D007EB30D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F85E5D227F636D007EB30D /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		035CBBD9228120D9006E2ACD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		03F85E51227F636B007EB30D /* iOSAlbumList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAlbumList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F85E54227F636B007EB30D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F85E5B227F636D007EB30D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +106,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035CBBD822812083006E2ACD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				03F85E5B227F636D007EB30D /* Assets.xcassets */,
+				03F85E5D227F636D007EB30D /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		03F695712281200D002D064D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				035CBBD9228120D9006E2ACD /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		03F85E48227F636B007EB30D = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +144,7 @@
 		03F85E53227F636B007EB30D /* iOSAlbumList */ = {
 			isa = PBXGroup;
 			children = (
-				03F85E67227F641E007EB30D /* Global Assets */,
+				03F85E67227F641E007EB30D /* Global Resources */,
 				03F85E66227F6413007EB30D /* Sources */,
 				03F85E60227F636D007EB30D /* Info.plist */,
 			);
@@ -141,13 +160,13 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		03F85E67227F641E007EB30D /* Global Assets */ = {
+		03F85E67227F641E007EB30D /* Global Resources */ = {
 			isa = PBXGroup;
 			children = (
-				03F85E5B227F636D007EB30D /* Assets.xcassets */,
-				03F85E5D227F636D007EB30D /* LaunchScreen.storyboard */,
+				035CBBD822812083006E2ACD /* Assets */,
+				03F695712281200D002D064D /* Extensions */,
 			);
-			path = "Global Assets";
+			path = "Global Resources";
 			sourceTree = "<group>";
 		};
 		03F85E68227F6454007EB30D /* Modules */ = {
@@ -533,6 +552,7 @@
 				03F85EAF227F8841007EB30D /* AlbumDetailDefaultPresenter.swift in Sources */,
 				03F85E7F227F6469007EB30D /* MainDefaultRouter.swift in Sources */,
 				03F85E94227F7B5A007EB30D /* HttpClient.swift in Sources */,
+				035CBBDA228120DA006E2ACD /* Extensions.swift in Sources */,
 				03F85E89227F6469007EB30D /* MainViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

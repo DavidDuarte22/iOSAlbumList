@@ -52,6 +52,11 @@ extension MainDefaultViewController: UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     // get count of cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if self.albums.count == 0 {
+            albumsCollectionView.setEmptyView(title: "We couldn't get any album", message: "Try again, please.")
+        } else {
+            self.albumsCollectionView.restore()
+        }
         return self.albums.count
     }
     
