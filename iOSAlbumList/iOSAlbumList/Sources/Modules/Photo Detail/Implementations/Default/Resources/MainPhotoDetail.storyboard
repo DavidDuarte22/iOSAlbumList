@@ -36,7 +36,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dda-BM-v4i" userLabel="BackButton">
                                 <rect key="frame" x="0.0" y="44" width="51" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="4UI-SC-Pan"/>
+                                    <constraint firstAttribute="height" constant="51" id="J92-tR-XAT"/>
+                                    <constraint firstAttribute="width" constant="51" id="Pza-xg-Uhr"/>
                                 </constraints>
                                 <state key="normal" image="arrowDown"/>
                                 <connections>
@@ -49,12 +50,12 @@
                             <constraint firstItem="rk2-Lc-uI9" firstAttribute="top" secondItem="hF2-Ny-NV6" secondAttribute="top" id="2gr-Fr-tdc"/>
                             <constraint firstItem="WtU-bZ-vXY" firstAttribute="leading" secondItem="ZMB-IZ-fZg" secondAttribute="leadingMargin" id="5KR-Zg-WHY"/>
                             <constraint firstItem="dda-BM-v4i" firstAttribute="top" secondItem="hF2-Ny-NV6" secondAttribute="top" id="6gb-rW-CmG"/>
-                            <constraint firstItem="hF2-Ny-NV6" firstAttribute="trailing" secondItem="dda-BM-v4i" secondAttribute="trailing" constant="363" id="PvX-8d-urC"/>
+                            <constraint firstItem="dda-BM-v4i" firstAttribute="leading" secondItem="hF2-Ny-NV6" secondAttribute="leading" id="KJH-73-oX2"/>
                             <constraint firstItem="rk2-Lc-uI9" firstAttribute="centerX" secondItem="hF2-Ny-NV6" secondAttribute="centerX" id="RnR-Iv-q22"/>
                             <constraint firstItem="hF2-Ny-NV6" firstAttribute="bottom" secondItem="rk2-Lc-uI9" secondAttribute="bottom" constant="404" id="Who-Il-ThL"/>
                             <constraint firstItem="WtU-bZ-vXY" firstAttribute="top" secondItem="rk2-Lc-uI9" secondAttribute="bottom" constant="20" id="bH1-xh-kiG"/>
+                            <constraint firstItem="dda-BM-v4i" firstAttribute="top" secondItem="hF2-Ny-NV6" secondAttribute="top" id="r7j-Sf-JV4"/>
                             <constraint firstItem="WtU-bZ-vXY" firstAttribute="centerX" secondItem="rk2-Lc-uI9" secondAttribute="centerX" id="sSk-sC-70t"/>
-                            <constraint firstItem="dda-BM-v4i" firstAttribute="leading" secondItem="rk2-Lc-uI9" secondAttribute="leading" id="xPN-ok-jci"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hF2-Ny-NV6"/>
                     </view>
