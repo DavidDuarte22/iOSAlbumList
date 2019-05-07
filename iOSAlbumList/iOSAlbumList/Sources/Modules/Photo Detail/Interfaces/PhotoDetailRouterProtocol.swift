@@ -12,6 +12,6 @@ import UIKit
 protocol PhotoDetailRouterProtocol {
     
     static func createPhotoDetailRouterModule(photoItem photo: PhotoItem, withImage image: UIImage) -> UIViewController
-    func navigateBackToListViewController(from view: AlbumDetailViewProtocol)
+    func navigateBackToListViewController(from view: PhotoDetailViewProtocol)
     
 }

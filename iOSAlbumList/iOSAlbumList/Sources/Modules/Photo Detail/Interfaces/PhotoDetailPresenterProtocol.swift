@@ -14,5 +14,6 @@ protocol PhotoDetailPresenterProtocol: class {
     var interactor: PhotoDetailInteractorProtocol? { get set }
     
     func showPhotoItem() -> PhotoItem
-    func showPhotoImage() -> UIImage 
+    func showPhotoImage() -> UIImage
+    func removeView(view: PhotoDetailViewProtocol)
 }

@@ -34,10 +34,12 @@ extension PhotoDetailDefaultRouter: PhotoDetailRouterProtocol {
         return photoDetailVC
     }
     
-    func navigateBackToListViewController(from view: AlbumDetailViewProtocol) {
+    func navigateBackToListViewController(from view: PhotoDetailViewProtocol) {
         guard let viewVC = view as? UIViewController else {
             fatalError("Invalid view protocol type")
         }
-        viewVC.navigationController?.popViewController(animated: true)
+        
+        viewVC.dismiss(animated: true, completion: nil)
+       // viewVC.navigationController?.popViewController(animated: true)
     }
 }

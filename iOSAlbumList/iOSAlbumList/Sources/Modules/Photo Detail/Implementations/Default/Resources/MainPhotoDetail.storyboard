@@ -13,7 +13,6 @@
         <!--Photo Detail Default View Controller-->
         <scene sceneID="GgD-wk-Ada">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3eV-Tc-lTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PhotoDetailDefaultViewController" id="UFc-aV-hAP" customClass="PhotoDetailDefaultViewController" customModule="iOSAlbumList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZMB-IZ-fZg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -34,15 +33,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dda-BM-v4i" userLabel="BackButton">
+                                <rect key="frame" x="0.0" y="44" width="51" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="4UI-SC-Pan"/>
+                                </constraints>
+                                <state key="normal" image="arrowDown"/>
+                                <connections>
+                                    <action selector="backButton:" destination="UFc-aV-hAP" eventType="touchUpInside" id="NiA-7y-sXr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rk2-Lc-uI9" firstAttribute="top" secondItem="hF2-Ny-NV6" secondAttribute="top" id="2gr-Fr-tdc"/>
                             <constraint firstItem="WtU-bZ-vXY" firstAttribute="leading" secondItem="ZMB-IZ-fZg" secondAttribute="leadingMargin" id="5KR-Zg-WHY"/>
+                            <constraint firstItem="dda-BM-v4i" firstAttribute="top" secondItem="hF2-Ny-NV6" secondAttribute="top" id="6gb-rW-CmG"/>
+                            <constraint firstItem="hF2-Ny-NV6" firstAttribute="trailing" secondItem="dda-BM-v4i" secondAttribute="trailing" constant="363" id="PvX-8d-urC"/>
                             <constraint firstItem="rk2-Lc-uI9" firstAttribute="centerX" secondItem="hF2-Ny-NV6" secondAttribute="centerX" id="RnR-Iv-q22"/>
                             <constraint firstItem="hF2-Ny-NV6" firstAttribute="bottom" secondItem="rk2-Lc-uI9" secondAttribute="bottom" constant="404" id="Who-Il-ThL"/>
                             <constraint firstItem="WtU-bZ-vXY" firstAttribute="top" secondItem="rk2-Lc-uI9" secondAttribute="bottom" constant="20" id="bH1-xh-kiG"/>
                             <constraint firstItem="WtU-bZ-vXY" firstAttribute="centerX" secondItem="rk2-Lc-uI9" secondAttribute="centerX" id="sSk-sC-70t"/>
+                            <constraint firstItem="dda-BM-v4i" firstAttribute="leading" secondItem="rk2-Lc-uI9" secondAttribute="leading" id="xPN-ok-jci"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hF2-Ny-NV6"/>
                     </view>
@@ -51,8 +63,12 @@
                         <outlet property="titleLabel" destination="WtU-bZ-vXY" id="8dC-kh-85G"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3eV-Tc-lTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.565217391304358" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowDown" width="256" height="256"/>
+    </resources>
 </document>

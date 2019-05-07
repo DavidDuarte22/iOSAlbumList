@@ -19,6 +19,10 @@ class PhotoDetailDefaultViewController: UIViewController {
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBAction func backButton(_ sender: UIButton) {
+        self.presenter?.removeView(view: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +57,7 @@ class PhotoDetailDefaultViewController: UIViewController {
                         )
                 }, completion: { (isCompleted) in
                     if isCompleted {
-                        self.dismiss(animated: false, completion: nil)
+                        self.presenter?.removeView(view: self)
                     }
                 })
             } else {

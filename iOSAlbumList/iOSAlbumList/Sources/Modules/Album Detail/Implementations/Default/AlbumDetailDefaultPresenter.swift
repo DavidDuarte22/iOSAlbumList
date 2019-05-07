@@ -53,6 +53,15 @@ extension AlbumDetailDefaultPresenter: AlbumDetailPresenterProtocol {
                 /* */
                 // display in cell when has it image
                 OperationQueue.main.addOperation({ () -> Void in
+                    /* simple animation */
+                    cell.alpha = 0
+                    UIView.animate(
+                        withDuration: 0.5,
+                        delay: 0.05 * Double(indexPath.row),
+                        animations: {
+                            cell.alpha = 1
+                    })
+                    /* */
                     cell.photoImage.image = img
                 })
             } catch {

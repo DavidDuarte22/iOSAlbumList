@@ -46,8 +46,7 @@ extension AlbumDetailDefaultRouter: AlbumDetailRouterProtocol {
         guard let viewVC = view as? UIViewController else {
             fatalError("Invalid View Protocol type")
         }
-        photoDetailVC.view.backgroundColor = .white
-        viewVC.view.backgroundColor = .white
+        
         viewVC.navigationController?.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         viewVC.navigationController?.present(photoDetailVC, animated: true)
     }

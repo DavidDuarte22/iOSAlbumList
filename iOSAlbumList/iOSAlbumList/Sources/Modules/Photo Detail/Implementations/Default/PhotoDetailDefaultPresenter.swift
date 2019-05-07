@@ -25,4 +25,8 @@ extension PhotoDetailDefaultPresenter: PhotoDetailPresenterProtocol {
         let photoImage = interactor?.fetchPhotoImage()
         return photoImage!
     }
+    
+    func removeView(view: PhotoDetailViewProtocol) {
+        router?.navigateBackToListViewController(from: view)
+    }
 }
