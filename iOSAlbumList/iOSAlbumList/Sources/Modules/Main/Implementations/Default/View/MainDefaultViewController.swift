@@ -71,6 +71,16 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = albumsCollectionView.dequeueReusableCell(withReuseIdentifier: "albumCard", for: indexPath) as! AlbumCardCollectionViewCell
         cell.albumTitle.text = albums[indexPath.row].title
+        
+        /* simple animation */
+        cell.alpha = 0
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.05 * Double(indexPath.row),
+            animations: {
+                cell.alpha = 1
+        })
+        /* */
         return cell
     }
     
