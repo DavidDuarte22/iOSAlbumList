@@ -12,7 +12,4 @@ protocol MainViewProtocol: class {
     
     var presenter: MainPresenterProtocol? { get set }
 
-    // PRESENTER -> VIEW
-    func showAlbums(_ albums: [AlbumItem])
-    func showErrorMessage(_ message: String)
 }

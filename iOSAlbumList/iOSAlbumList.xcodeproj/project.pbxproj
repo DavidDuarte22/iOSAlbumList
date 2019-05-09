@@ -325,8 +325,8 @@
 		03F85EC7227FAD93007EB30D /* Photo Detail */ = {
 			isa = PBXGroup;
 			children = (
-				03F85EC8227FAD93007EB30D /* Implementations */,
 				03F85ED0227FAD93007EB30D /* Interfaces */,
+				03F85EC8227FAD93007EB30D /* Implementations */,
 			);
 			path = "Photo Detail";
 			sourceTree = "<group>";

@@ -10,5 +10,6 @@ import Foundation
 import UIKit
 
 protocol AlbumDetailViewProtocol: class {
-    
+    var presenter: AlbumDetailPresenterProtocol? { get set }
+
 }

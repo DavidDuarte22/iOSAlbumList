@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class MainDefaultViewController: UIViewController {
+class MainDefaultViewController: UIViewController, MainViewProtocol {
     
     var presenter: MainPresenterProtocol?
     let disposeBag = DisposeBag()
@@ -92,13 +92,5 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     // if a cell is selected, navigate to album detail
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.showAlbumDetail(self, albums[indexPath.row])
-    }
-}
-
-extension MainDefaultViewController: MainViewProtocol {
-    func showAlbums(_ albums: [AlbumItem]) {
-    }
-    
-    func showErrorMessage(_ message: String) {
     }
 }
