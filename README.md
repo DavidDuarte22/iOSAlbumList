@@ -1,2 +1,2 @@
 # iOSAlbumList
-Simple Album List using jsonplaceholder. Developed for MediaMonks by David Duarte in 48 hs .
+Simple Album List using jsonplaceholder with VIPER-R design pattern
